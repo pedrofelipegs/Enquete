@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquete</title>
+    <style>
+        body{
+            background-color: #13c4be;
+        }
+        .pai{
+            
+            margin-top: 22%;
+            
+        }
+        .enquete{
+            height: 400px;
+            width: 400px;
+            background-color: #62e1ea;
+            color:rgb(10, 6, 0);
+            border-radius: 50%;
+            border: 2px solid rgb(14, 0, 0);
+            text-align: center;
+            margin-top: -20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        #botao{
+            margin-top: 2%;
+            margin-left: 1%;
+            margin-bottom: 2%;
+
+        }
+        .btn:focus, .btn::-moz-focus-inner{
+            outline:none;
+            border:none;
+        }
+        .btn{
+            width: 60px;
+            font-family: arial;
+            font-size:14px;
+            text-transform: uppercase;
+            font-weight:700;
+            border:none;
+            padding:10px;
+            cursor: pointer;
+            display:inline-block;
+            text-decoration: none;
+        }
+        .btn-green{
+            background:green;
+            color:#fff;
+            box-shadow:0 5px 0 #006000;
+        }
+        .btn-green:hover{
+            background:#006000;
+            box-shadow:0 5px 0 #003f00;
+        }
+        .btn-red{
+            background:red;
+            color:#fff;
+            box-shadow:0 5px 0 #d20000;
+        }
+        .btn-red:hover{
+            background:#d20000;
+            box-shadow:0 5px 0 #b00000;
+        }
+        .btn-green:active, .btn-red:active{
+            position:relative;
+            top:5px;
+            box-shadow:none;
+        }
+        .bloco{
+            margin-top: 10px;
+            text-align: center;
+        }
+        #s{
+            background-color: green;
+            height: 20px;
+            width: 10px;
+        }
+        #n{
+            background-color: red;
+            height: 20px;
+            width: 10px;
+        }
+        fieldset{
+            width: 100px;
+           /* margin-left: -80px;*/
+            /*margin-right: 800px;*/
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="pai"> 
+        <center><div class="enquete"><h2>Você é a favor do lockdown, em cidades com situação de colapso no sistema de saúde?</h2></div>
+        <button type="button" class="btn btn-green" id="botao" onclick="votosim()"><strong>Sim</strong></button>
+        <button type="button" class="btn btn-red" id="botao" onclick="votonao()"><strong>Não</strong></button>
+        <h2>RESULTADO:</h2>
+        <fieldset><div class="bloco" id="s">0</div>
+        <div class="bloco" id="n">0</div></fieldset>
+    </div></center>
+    
+    <script>
+        var largura = 10;
+        var votos = 0;
+        
+        function votosim(){
+        largura += 10;
+        votos +=1;
+        
+        document.querySelector("#s").style.width = largura + "px";
+        document.querySelector("#s").innerHTML = votos;
+    }
+        var largura02 = 10;
+        var votos02 = 0;
+
+        function votonao(){
+        largura02 += 10;
+        votos02 += 1;
+
+        document.querySelector("#n").style.width = largura02 + "px";
+        document.querySelector("#n").innerHTML = votos02;
+
+    }
+    </script>
+</body>
+</html>
